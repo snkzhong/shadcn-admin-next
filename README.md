@@ -1,4 +1,4 @@
-# Shadcn UI Admin Dashboard
+# Shadcn UI & Next.js Admin Dashboard
 
 ## Getting Started
 
