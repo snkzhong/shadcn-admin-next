@@ -26,8 +26,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Author
 
-[https://github.com/snkzhong](@snkzhong)
+[@snkzhong](https://github.com/snkzhong)
 
 ## License
 
-Licensed under the MIT license.
+MIT license.
