@@ -1,0 +1,16 @@
+{
+  "welcome": "欢迎光临小站!",
+  "about": "关于我们",
+  "description": "这个是示例",
+  "switchTo": "切换到 {language}",
+  "currentLocale": "Current language: {locale}",
+  "components": {
+  	"button": {
+  		"ok": "确定",
+  		"cancel": "取消"
+  	}
+  },
+  "HomePage": {
+    "title": "Hello world!"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "welcome": "Welcome to our website!",
+  "about": "About Us",
+  "description": "This is a demo of next-intl in Next.js.",
+  "switchTo": "Switch to {language}",
+  "currentLocale": "Current language: {locale}",
+  "components": {
+  	"button": {
+  		"ok": "ok",
+  		"cancel": "cancel"
+  	}
+  },
+  "HomePage": {
+    "title": "Hello world!"
+  }
+}
