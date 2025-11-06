@@ -5,7 +5,7 @@ import { Button } from "~/components/ui/button"
 import { useDarkMode } from "~/lib/contexts/dark-mode-provider"
 
 interface DarkModeSwitcherProps {
-  dict: any
+  dict?: Record<string, unknown>
 }
 
 export default function DarkModeSwitcher({ dict }: DarkModeSwitcherProps) {

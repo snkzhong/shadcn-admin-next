@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+@plugin "tailwind-scrollbar-hide";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -41,6 +43,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-brand: var(--brand);
+  --color-highlight: var(--highlight);
 }
 
 :root {
@@ -76,6 +80,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --highlight: oklch(0.852 0.199 91.936);
+  --brand: oklch(0.623 0.214 259.815);
 }
 
 .dark {
@@ -110,13 +116,42 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --highlight: oklch(0.852 0.199 91.936);
+  --brand: oklch(0.707 0.165 254.624);
 }
 
 @layer base {
   * {
+    box-sizing: border-box;
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* 自定义水平布局的 FormItem 类 */
+.form-item-horizontal {
+  @apply flex flex-row items-center gap-4;
+}
+
+.form-item-horizontal .form-label {
+  @apply w-24 text-right justify-end;
+}
+
+.form-item-horizontal .form-content {
+  @apply flex-1 space-y-1;
+}
+
+
+
+@font-face {
+  font-family: 'geist-mono';
+  src: url('/fonts/GeistMono-VariableFont_wght.ttf') format('ttf-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-family-geist-mono: 'geist-mono', system-ui, sans-serif;
 }

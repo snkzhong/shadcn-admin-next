@@ -111,9 +111,9 @@ export default function TopAppDock() {
               <div
                 key={idx} 
                 onClick={() => handleAppClick(app.name)}
-                className={cn("flex flex-col items-center justify-center space-y-2 hover:bg-accent rounded-lg p-2 cursor-pointer", color)}
+                className={cn("flex flex-col items-center justify-center space-y-2 hover:bg-accent rounded-lg p-2 cursor-pointer")}
               >
-                <Icon className="w-8 h-8" />
+                <Icon className={cn("w-8 h-8 rounded", color)} />
                 <span className="text-xs text-center">{app.name}</span>
               </div>
             );

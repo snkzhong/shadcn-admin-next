@@ -14,6 +14,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "~/components/ui/command";
+import { cn } from "~/lib/utils";
 
 const mock = [
   { id: "1", title: "Home", shortcut: "⌘H" },
@@ -23,7 +24,10 @@ const mock = [
   { id: "5", title: "Language", shortcut: "⌘L" },
 ];
 
-export default function QuickSearch() {
+export default function QuickSearch({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -38,7 +42,7 @@ export default function QuickSearch() {
   }, []);
 
   return (
-    <>
+    <div className={cn(className)}>
       {/* 快捷搜索输入框（只读，用于触发） */}
       <div
         className="relative w-full max-w-lg cursor-pointer"
@@ -89,6 +93,6 @@ export default function QuickSearch() {
           </CommandList>
         </Command>
       </CommandDialog>
-    </>
+    </div>
   );
 }

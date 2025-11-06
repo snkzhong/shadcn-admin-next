@@ -12,6 +12,21 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  MessageCircleMore,
+  Mail,
+  Music4,
+  Aperture,
+  ShoppingCart,
+  Table,
+  ChartLine,
+  Image,
+  CircleQuestionMark,
+  ShieldUser,
+  StepForward,
+  CircleDollarSign,
+  FilePenLine,
+  Component,
+  LayoutDashboard,
 } from "lucide-react";
 
 import { NavMain } from "~/components/nav-main";
@@ -24,7 +39,15 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  useSidebar,
 } from "~/components/ui/sidebar";
+import { Link } from '~/i18n/navigation';
 
 // This is sample data.
 const data = {
@@ -50,35 +73,132 @@ const data = {
       plan: "Free",
     },
   ],
-  navMain: [
+  navDashboard: [
     {
       title: "Dashboard",
+      url: "/dashboard",
+      icon: LayoutDashboard,
+      isActive: true,
+    },
+  ],
+  navApps: [
+    {
+      title: "Chat",
+      url: "/apps/chat",
+      icon: MessageCircleMore,
+      isActive: true,
+    },
+    {
+      title: "Mail",
+      url: "/apps/mail",
+      icon: Mail,
+      isActive: true,
+    },
+    {
+      title: "Music",
+      url: "/apps/music",
+      icon: Music4,
+      isActive: true,
+    },
+    {
+      title: "Chatgpt",
+      url: "/apps/chatgpt",
+      icon: Aperture,
+      isActive: true,
+    },
+    {
+      title: "ecommerce",
       url: "#",
-      icon: SquareTerminal,
+      icon: ShoppingCart,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "/dashboard",
+          title: "Dashboard",
+          url: "/apps/ecommerce/dashboard",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Products",
+          url: "/apps/ecommerce/products",
         },
         {
-          title: "Settings",
-          url: "#",
+          title: "Orders",
+          url: "/apps/ecommerce/orders",
+        },
+      ]
+    },
+  ],
+  navPages: [
+    {
+      title: "Authentication",
+      url: "#",
+      icon: ShieldUser,
+      isActive: true,
+      items: [
+        {
+          title: "Simple",
+          url: "/pages/authentication/simple",
+        },
+        {
+          title: "Two Column",
+          url: "/pages/authentication/two-column",
+        },
+        {
+          title: "Form Image",
+          url: "/pages/authentication/form-image",
         },
       ],
     },
     {
-      title: "Forms",
-      url: "/forms",
-      icon: Bot,
+      title: "Faq",
+      url: "/pages/faq",
+      icon: CircleQuestionMark,
+      isActive: true,
+    },
+    {
+      title: "Timeline",
+      url: "/pages/timeline",
+      icon: StepForward,
+      isActive: true,
+    },
+    {
+      title: "Pricing",
+      url: "/pages/pricing",
+      icon: CircleDollarSign,
+      isActive: true,
+    }
+  ],
+  navComponents: [
+    {
+      title: "Shadcn UI",
+      url: "#",
+      icon: Component,
       items: [
         {
           title: "Basic",
-          url: "/forms",
+          url: "/forms/basic",
+        },
+      ]
+    },
+    {
+      title: "Forms",
+      url: "#",
+      icon: FilePenLine,
+      items: [
+        {
+          title: "Basic",
+          url: "/forms/basic",
+        },
+        {
+          title: "File Upload",
+          url: "/forms/file-upload",
+        },
+        {
+          title: "Editor",
+          url: "/forms/editor",
+        },
+        {
+          title: "Wizard",
+          url: "/forms/wizard",
         },
         {
           title: "Validation",
@@ -93,72 +213,87 @@ const data = {
     {
       title: "Tables",
       url: "#",
-      icon: BookOpen,
+      icon: Table,
       items: [
         {
-          title: "Introduction",
-          url: "#",
+          title: "Basic",
+          url: "/tables/basic",
         },
         {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
+          title: "Data Table",
+          url: "/tables/data-table",
+        }
       ],
     },
     {
       title: "Icons",
       url: "#",
-      icon: Settings2,
+      icon: Image,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: "Lucide",
+          url: "/icons/lucide",
         },
         {
-          title: "Team",
-          url: "#",
+          title: "HeroIcons",
+          url: "/icons/heroicons",
         },
         {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
+          title: "Tabler",
+          url: "/icons/tabler",
+        }
       ],
     },
     {
       title: "Charts",
       url: "#",
-      icon: Settings2,
+      icon: ChartLine,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: "Area Charts",
+          url: "/charts/area",
         },
         {
-          title: "Team",
-          url: "#",
+          title: "Bar Charts",
+          url: "/charts/bar",
         },
         {
-          title: "Billing",
-          url: "#",
+          title: "Line Charts",
+          url: "/charts/line",
         },
         {
-          title: "Limits",
-          url: "#",
+          title: "Pie Charts",
+          url: "/charts/pie",
         },
+        {
+          title: "Radar Charts",
+          url: "/charts/radar",
+        },
+        {
+          title: "Radial Charts",
+          url: "/charts/radial",
+        },
+        {
+          title: "Tooltips",
+          url: "/charts/tooltips",
+        }
       ],
     },
+    {
+      title: "Maps",
+      url: "#",
+      icon: Map,
+      items: [
+        {
+          title: "Leaflet",
+          url: "/maps/leaflet",
+        },
+        {
+          title: "maplibre",
+          url: "/maps/maplibre",
+        }
+      ]
+    }
   ],
   projects: [
     {
@@ -183,11 +318,30 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+
+        <SidebarMenu>
+      <SidebarMenuItem>
+            <div
+              className="flex data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+            >
+              <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+                <img src="/logo.png" className="size-8" />
+              </div>
+              <div className="grid flex-1 text-left text-sm leading-tight">
+                <span className="truncate font-medium">Shadcn Admin Next</span>
+                <span className="truncate text-xs"></span>
+              </div>
+          </div>
+        </SidebarMenuItem>
+      </SidebarMenu>
+
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain title="" items={data.navDashboard} />
+        <NavMain title="Apps" items={data.navApps} />
+        <NavMain title="Pages" items={data.navPages} />
+        <NavMain title="Components" items={data.navComponents} />
+        <NavProjects title="others" projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

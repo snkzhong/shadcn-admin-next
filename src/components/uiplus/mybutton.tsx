@@ -1,11 +1,12 @@
+import * as React from "react";
 import { Button, ButtonProps } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
 // 🔧 扩展 Props：添加你想要的自定义属性
 export interface MyButtonProps extends ButtonProps {
   // 自定义属性
-  variant?: ButtonProps['variant'] | 'brand' | 'outline-primary';
-  size?: ButtonProps['size'] | 'xl';
+  // variant?: ButtonProps['variant'] | 'brand' | 'outline-primary';
+  // size?: ButtonProps['size'] | 'xl';
   loading?: boolean;
   fullWidth?: boolean;
   icon?: React.ReactNode;
@@ -27,11 +28,11 @@ export function MyButton({
   // ✅ 基于 ShadCN Button 扩展样式
   const baseClasses = cn(
     // 自定义尺寸
-    size === 'xl' && 'h-12 px-8 text-base',
+    // size === 'xl' && 'h-12 px-8 text-base',
 
-    // 自定义变体
-    variant === 'brand' && 'bg-blue-600 hover:bg-blue-700 text-white',
-    variant === 'outline-primary' && 'border border-primary text-primary hover:bg-primary/10',
+    // // 自定义变体
+    // variant === 'brand' && 'bg-blue-600 hover:bg-blue-700 text-white',
+    // variant === 'outline-primary' && 'border border-primary text-primary hover:bg-primary/10',
 
     // 图标支持
     icon && !children && 'px-3', // 图标按钮

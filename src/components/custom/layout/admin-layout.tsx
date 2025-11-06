@@ -20,8 +20,8 @@ import { TopNotification } from "~/components/top-notification";
 import  NotificationData from "~/mock/notification-data";
  
 type Props = {
+  params?: Promise<{locale: string}>;
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
 };
  
 export default function AdminLayout({children, params}: Props) {
@@ -62,11 +62,11 @@ export default function AdminLayout({children, params}: Props) {
         <SidebarTrigger/>
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
 
-          <div className="w-full flex items-center gap-3 p-4 sm:gap-4">
-            <div>
+          <div className="w-full flex items-center gap-0 md:gap-4">
+            <div className="hidden sm:block pl-4">
               <QuickSearch />
             </div>
-            <div className='ms-auto flex items-center space-x-4'>
+            <div className='ms-auto flex items-center space-x-4 pr-4'>
               <DarkModeSwitcher />
               <TopLanguageSwitcher value={lang} onChange={setLang} />
               <TopAppDock />

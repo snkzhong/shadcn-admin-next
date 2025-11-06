@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
-import { themes, type ThemeKey, type Theme, defaultTheme } from "@/lib/themes"
+import { themes, type ThemeKey, type Theme, defaultTheme } from "~/lib/themes"
 
 interface ThemeContextType {
   currentTheme: ThemeKey

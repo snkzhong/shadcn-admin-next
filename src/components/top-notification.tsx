@@ -55,7 +55,7 @@ export function TopNotification({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="ghost" size="icon" className="rounded-full relative">
+        <Button variant="secondary" size="icon" className="rounded-full relative">
           <Bell className="h-5 w-5" />
           {unreadCount > 0 && (
             <Badge
