@@ -2,10 +2,11 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 // import { useTranslations } from 'next-intl';
 import { Button } from "~/components/ui/button";
 import { Home, Search, Plus, ArrowRight } from 'lucide-react';
-
+import { redirect } from 'next/navigation';
 
 export default async function HomePage() {
   
+  redirect("/en/dashboard");
   const tRoot = await getTranslations();
 
   // Enable static rendering
