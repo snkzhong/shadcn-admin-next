@@ -48,7 +48,6 @@ export default function AdminLayout({children, params}: Props) {
   };
 
   const handleViewMore = () => {
-    alert("跳转到消息中心");
   };
 
   const handleSettingChange = (key: string, value: string) => {

@@ -375,10 +375,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                 <img src="/logo.png" className="size-8" />
               </div>
+              <Link href="/">
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">Shadcn Admin</span>
-                <span className="truncate text-xs">shadcn ui & next.js</span>
+                  <span className="truncate font-bold">Shadcn Admin</span>
+                  <span className="truncate text-xs">shadcn ui & next.js</span>
               </div>
+              </Link>
           </div>
         </SidebarMenuItem>
       </SidebarMenu>

@@ -124,14 +124,33 @@ export function TopNotification({
         <Separator />
         {/* 底部查看更多 */}
         <div className="px-4 py-2 shrink-0">
-          <Button
+          {/* <Button
             variant="ghost"
             size="sm"
             className="w-full"
             onClick={onViewMore}
           >
             View more
-          </Button>
+          </Button> */}
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button className="w-full" variant="outline">View more</Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="grid gap-4">
+                <div className="space-y-2">
+                  <h4 className="leading-none font-medium">Notification Center</h4>
+                  <p className="text-muted-foreground text-sm">
+                    Jump to notification list page
+                  </p>
+                </div>
+                <div className="grid gap-2">
+                  
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
+
         </div>
       </PopoverContent>
     </Popover>
