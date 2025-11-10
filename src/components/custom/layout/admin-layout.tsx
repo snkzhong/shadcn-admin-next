@@ -6,9 +6,13 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "~/components/ui/sidebar";
+// import {
+//   SidebarTrigger
+// } from "~/components/uiplus/sidebar-trigger";
 import {
   SidebarTrigger
-} from "~/components/uiplus/sidebar-trigger";
+} from "~/components/ui/sidebar";
+import { Separator } from "~/components/ui/separator";
 
 import DarkModeSwitcher from "~/components/uiplus/dark-mode-switcher";
 import ProfileDropdown from "~/components/profile-dropdown";
@@ -59,10 +63,12 @@ export default function AdminLayout({children, params}: Props) {
       <AppSidebar />
       
       <SidebarInset>
-        <SidebarTrigger/>
+        {/* <SidebarTrigger/> */}
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
 
-          <div className="w-full flex items-center gap-0 md:gap-4">
+          <div className="w-full flex items-center px-4 gap-0 md:gap-4">
+            <SidebarTrigger className="-ml-1" />
+            <Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:h-4" />
             <div className="hidden sm:block pl-4">
               <QuickSearch />
             </div>

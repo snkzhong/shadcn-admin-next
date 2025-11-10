@@ -60,7 +60,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
         <Card className="lg:col-span-2">
           <CardHeader>
             <CardTitle>Sales Overview</CardTitle>
@@ -108,7 +108,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent Orders and Top Products */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
         <Card>
           <CardHeader>
             <CardTitle>Recent Orders</CardTitle>

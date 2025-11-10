@@ -29,7 +29,7 @@ import { Calendar } from "~/components/ui/calendar";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "~/lib/utils";
 import { format } from "date-fns";
-import { DateRangePicker, DateRange } from "~/components/uiplus/date-range-picker";
+// import { DateRangePicker, DateRange } from "~/components/uiplus/date-range-picker";
 import { Separator } from "~/components/ui/separator";
 import { Label } from "~/components/ui/label";
 import {
@@ -54,7 +54,7 @@ const formSchema = z.object({
   color: z.string(),
   fruit: z.string().nonempty("Select a fruit"),
   textarea: z.string().max(200, "Max 200 characters"),
-  date_range: z.custom<DateRange | undefined>().optional(),
+  // date_range: z.custom<DateRange | undefined>().optional(),
   address: z.string().optional(),
 });
 
@@ -63,7 +63,7 @@ type FormValues = z.infer<typeof formSchema>;
 const fruits = ["Apple", "Banana", "Orange", "Watermelon", "Grape"];
 
 export default function FormBasicPage() {
-  const [range, setRange] = useState<DateRange | undefined>(undefined);
+  // const [range, setRange] = useState<DateRange | undefined>(undefined);
 
   const formInline = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -271,7 +271,7 @@ export default function FormBasicPage() {
               )}
             />
 
-            <FormField
+            {/* <FormField
               control={formHorizontal.control}
               name="date_range"
               render={({ field }) => (
@@ -285,7 +285,7 @@ export default function FormBasicPage() {
                   </div>
                 </FormItem>
               )}
-            />
+            /> */}
 
 
             <FormField
@@ -528,7 +528,7 @@ export default function FormBasicPage() {
               )}
             />
 
-            <FormField
+            {/* <FormField
               control={formVertical.control}
               name="date_range"
               render={({ field }) => (
@@ -542,7 +542,7 @@ export default function FormBasicPage() {
                   </div>
                 </FormItem>
               )}
-            />
+            /> */}
 
 
             <FormField

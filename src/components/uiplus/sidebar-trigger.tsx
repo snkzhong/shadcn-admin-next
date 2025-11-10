@@ -1,7 +1,7 @@
 'use client';
 
 import { useSidebar } from '~/components/ui/sidebar';
-import { ArrowRight } from 'lucide-react';
+import { TextAlignJustify } from 'lucide-react';
 import { Button } from '~/components/ui/button';
 import { cn } from '~/lib/utils';
 
@@ -23,7 +23,7 @@ export function SidebarTrigger({
       onClick={toggleSidebar}
       aria-label={open ? 'Collapse sidebar' : 'Expand sidebar'}
     >
-      <ArrowRight
+      <TextAlignJustify
         className={cn(
           'h-4 w-4 text-muted-foreground transition-transform duration-300 ease-in-out',
           open ? 'rotate-0' : 'rotate-180'

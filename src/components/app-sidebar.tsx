@@ -174,8 +174,52 @@ const data = {
       icon: Component,
       items: [
         {
-          title: "Basic",
-          url: "/forms/basic",
+          title: "Alert",
+          url: "/shadcnui/alert",
+        },
+        {
+          title: "Button",
+          url: "/shadcnui/button",
+        },
+        {
+          title: "Card",
+          url: "/shadcnui/card",
+        },
+        {
+          title: "Carousel",
+          url: "/shadcnui/carousel",
+        },
+        {
+          title: "Dropdown",
+          url: "/shadcnui/dropdown",
+        },
+        {
+          title: "Modal",
+          url: "/shadcnui/modal",
+        },
+        {
+          title: "Popover",
+          url: "/shadcnui/popover",
+        },
+        {
+          title: "Tabs",
+          url: "/shadcnui/tabs",
+        },
+        {
+          title: "Progress",
+          url: "/shadcnui/progress",
+        },
+        {
+          title: "Toast",
+          url: "/shadcnui/toast",
+        },
+        {
+          title: "Menu",
+          url: "/shadcnui/menu",
+        },
+        {
+          title: "Date Picker",
+          url: "/shadcnui/date-picker",
         },
       ]
     },
@@ -187,6 +231,10 @@ const data = {
         {
           title: "Basic",
           url: "/forms/basic",
+        },
+        {
+          title: "Select",
+          url: "/forms/select",
         },
         {
           title: "File Upload",
@@ -322,14 +370,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
       <SidebarMenuItem>
             <div
-              className="flex data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              className="flex gap-2 py-2 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <div className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                 <img src="/logo.png" className="size-8" />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">Shadcn Admin Next</span>
-                <span className="truncate text-xs"></span>
+                <span className="truncate font-medium">Shadcn Admin</span>
+                <span className="truncate text-xs">shadcn ui & next.js</span>
               </div>
           </div>
         </SidebarMenuItem>
