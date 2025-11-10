@@ -16,6 +16,24 @@ import {
   PopoverTrigger,
 } from "~/components/ui/popover";
 
+// 定义选项类型
+export interface MultiSelectOption {
+  value: string;
+  label: string;
+  icon?: React.ReactNode;
+}
+
+// 定义组件 props 类型
+export interface MultiSelectProps {
+  options: MultiSelectOption[];
+  selected: string[];
+  onChange: (selected: string[]) => void;
+  placeholder?: string;
+  className?: string;
+  maxDisplay?: number;
+  searchable?: boolean;
+}
+
 export default function MultiSelect({
   options,
   selected,
@@ -24,10 +42,10 @@ export default function MultiSelect({
   className,
   maxDisplay = 3,
   searchable = true,
-}) {
+}: MultiSelectProps) {
   const [open, setOpen] = useState(false);
 
-  const handleSelect = (value) => {
+  const handleSelect = (value: string) => {
     if (selected.includes(value)) {
       onChange(selected.filter((item) => item !== value));
     } else {
@@ -35,7 +53,7 @@ export default function MultiSelect({
     }
   };
 
-  const handleRemove = (value, e) => {
+  const handleRemove = (value: string, e: React.MouseEvent | React.KeyboardEvent) => {
     e.stopPropagation();
     onChange(selected.filter((item) => item !== value));
   };

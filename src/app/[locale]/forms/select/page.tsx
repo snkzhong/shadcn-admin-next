@@ -35,6 +35,7 @@ import {
 import MultiSelect from "~/components/uiplus/select/multi-select";
 import SearchableSelect from "~/components/uiplus/select/searchable-select";
 import TagSelect from "~/components/uiplus/select/tag-select";
+import { StepId } from "framer-motion";
 
 export default function SelectDemo() {
   // Basic Select
@@ -42,23 +43,45 @@ export default function SelectDemo() {
   const [categoryValue, setCategoryValue] = useState("");
 
   // Multi Select
-  const [selectedSkills, setSelectedSkills] = useState([]);
-  const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
 
   // Searchable Select
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedCompany, setSelectedCompany] = useState("");
 
   // Tag Select
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState<string[]>([]);
   const [interests, setInterests] = useState(["Design", "Development"]);
 
-  // Form state
-  const [formData, setFormData] = useState({
-    department: "",
-    position: "",
+  // // Form state
+  // const [formData, setFormData] = useState({
+  //   department: "",
+  //   position: "",
+  //   skills: [],
+  //   location: "",
+  // });
+
+  interface SelectFormState {
+    skills: string[];
+    languages?: string[];
+    country?: string;
+    department: string;
+    location: string;
+    position: string;
+    tags?: string[];
+    // 可添加其他字段
+  }
+
+  // 初始化状态
+  const [formData, setFormData] = useState<SelectFormState>({
     skills: [],
+    languages: [],
+    country: "",
+    department: "",
     location: "",
+    position: "",
+    tags: [],
   });
 
   const skillOptions = [

@@ -14,7 +14,27 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "~/components/ui/popover";
+import { StepId } from "framer-motion";
 
+// 定义选项类型
+export interface MultiSelectOption {
+  value: string;
+  label: string;
+  description?: string;
+  icon?: React.ReactNode;
+}
+
+// 定义组件 props 类型
+export interface MultiSelectProps {
+  options: MultiSelectOption[];
+  value: string;
+  onChange: (selected: string) => void;
+  placeholder?: string;
+  emptyText?: string;
+  className?: string;
+  maxDisplay?: number;
+  searchable?: boolean;
+}
 export default function SearchableSelect({
   options,
   value,
@@ -22,7 +42,7 @@ export default function SearchableSelect({
   placeholder = "Select option...",
   emptyText = "No option found.",
   className,
-}) {
+}: MultiSelectProps) {
   const [open, setOpen] = useState(false);
 
   const selectedOption = options.find((option) => option.value === value);

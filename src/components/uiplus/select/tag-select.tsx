@@ -4,6 +4,16 @@ import { Badge } from "~/components/ui/badge";
 import { Input } from "~/components/ui/input";
 import { cn } from "~/lib/utils";
 
+// 定义组件 Props 类型
+export interface TagSelectProps {
+  tags: string[];
+  onChange: (tags: string[]) => void;
+  placeholder?: string;
+  className?: string;
+  maxTags?: number;
+  suggestions?: string[];
+}
+
 export default function TagSelect({
   tags,
   onChange,
@@ -11,11 +21,11 @@ export default function TagSelect({
   className,
   maxTags,
   suggestions = [],
-}) {
+}: TagSelectProps) {
   const [inputValue, setInputValue] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter" && inputValue.trim()) {
       e.preventDefault();
       addTag(inputValue.trim());
@@ -24,7 +34,7 @@ export default function TagSelect({
     }
   };
 
-  const addTag = (tag) => {
+  const addTag = (tag: string) => {
     if (maxTags && tags.length >= maxTags) return;
     if (!tags.includes(tag)) {
       onChange([...tags, tag]);
@@ -33,7 +43,7 @@ export default function TagSelect({
     }
   };
 
-  const removeTag = (tagToRemove) => {
+  const removeTag = (tagToRemove: string) => {
     onChange(tags.filter((tag) => tag !== tagToRemove));
   };
 
