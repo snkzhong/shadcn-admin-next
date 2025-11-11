@@ -12,7 +12,6 @@ A powerful, feature-rich admin dashboard built with the latest web technologies.
 ![Screenhot](https://ph-files.imgix.net/07ea9ffd-a783-4f23-9d88-99983f27026b.jpeg?auto=compress&codec=mozjpeg&cs=strip&auto=format&fm=pjpg&w=1100&h=624&fit=max&frame=1&dpr=2)
 
 **Demo:** 
-![](https://ph-files.imgix.net/07ea9ffd-a783-4f23-9d88-99983f27026b.jpeg?auto=compress&codec=mozjpeg&cs=strip&auto=format&fm=pjpg&w=1100&h=624&fit=max&frame=1&dpr=2)
 [https://shadcn-admin-next.vercel.app](https://shadcn-admin-next.vercel.app)
 
 
