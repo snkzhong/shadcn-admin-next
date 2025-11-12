@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import DarkModeProvider from "~/lib/contexts/dark-mode-provider";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -34,6 +35,7 @@ export default function RootLayout({
             {children}
           </NextIntlClientProvider>
         </DarkModeProvider>
+	<Analytics />
       </body>
     </html>
   );

@@ -63,6 +63,7 @@
     "@types/maplibre-gl": "^1.13.2",
     "@udecode/cn": "^49.0.15",
     "@uploadthing/react": "^7.3.3",
+    "@vercel/analytics": "^1.5.0",
     "ai": "^5.0.28",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
