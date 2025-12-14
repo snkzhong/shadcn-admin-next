@@ -16,27 +16,24 @@ import "./globals.css";
 // });
 
 export const metadata: Metadata = {
-  title: "shadcn-ui admin dashboard",
-  description: "ready to use Shadcn admin dashboard, using the latest technology, such as the next.js tailwind v4 shadcn UI component.",
+    title: "shadcn-ui admin dashboard",
+    description:
+        "ready to use Shadcn admin dashboard, using the latest technology, such as the next.js tailwind v4 shadcn UI component.",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`font-geist-mono antialiased`}
-      >
-        <DarkModeProvider>
-          <NextIntlClientProvider>
-            {children}
-          </NextIntlClientProvider>
-        </DarkModeProvider>
-	<Analytics />
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`font-geist-mono antialiased`}>
+                <DarkModeProvider>
+                    <NextIntlClientProvider>{children}</NextIntlClientProvider>
+                </DarkModeProvider>
+                <Analytics />
+            </body>
+        </html>
+    );
 }

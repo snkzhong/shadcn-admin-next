@@ -68,7 +68,7 @@ export function Toast({
   } ${className || ''} ${isVisible ? 'opacity-100 transform-none' : 'opacity-0 transform translate-y-2'}`;
   
   const typeClasses: ToastTypeMap = {
-    success: 'bg-green-50 border-l-4 border-green-500 text-green-800',
+    success: 'border-l-4 bg-background border-success-border text-success',
     error: 'bg-red-50 border-l-4 border-red-500 text-red-800',
     info: 'bg-blue-50 border-l-4 border-blue-500 text-blue-800',
     warning: 'bg-yellow-50 border-l-4 border-yellow-500 text-yellow-800',
